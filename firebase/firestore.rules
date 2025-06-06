@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /product_discounts/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /supermarkets/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+  }
+}
